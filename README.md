@@ -1,1 +1,11 @@
 # basicRoboticsAlgorithms
+
+eulerAngles: This notebook deals with rotations (how they are performed on a manifold and don't follow euclidian updates) as well as a representation of rotation matrices (simply thought of as rigid body transformations) with the help of the ZYX Euler angle convention. We explore the Euler angle convention and highlight its major drawback, that of the Gimbal Lock. 
+
+The folder Operations_on_a_pointCloud deals with, well, operations on a point cloud! We generate a point cloud for each of the given LiDAR bins and visualise it in open3D. We then register all 77 point clouds in one frame, the coordinate frame of the inital point clouds, we are able to do this with the help of the odometry data. Using our knowledge of rotation matrices from the previous (eulerAngle) notebook, we premultiply all the points in the point cloud with the rotation matrix corresponding to the frame in which the point belongs. With the point cloud we then generate a basic occupancy grid which is a commonly used representation of structural data in many robotics problems. The occupancy map is generated on projecting the 3D points onto the XZ plane. The odometry data is present in 01.txt and the data from the LiDAR (LiDAR bins) is present in bins in the 01 folder.
+
+optimMethods: This notebook deals with the analysis of popular Non-Linear Least Squares optimisation methods: Gradient descent, Gauss-Newton and the Levenberg–Marquardt algorithm. The performance of the algorithms are analyzed on step-size, hyperparamter values, robustsness to noise as well as iterations taken to converge (if convergence is achieved). We plot our observations for the same in a manner that is understandable without knowledge of the code runs.
+
+basicICP: A very basic implementation of the Iteractive Closest Point algorithm as we are given the correspondances between two point clouds. We use the RMSE (root mean squared error) metric to judge convergence.
+
+poseGraphOptimisation and SLAM: This folder deals with a common problem in the "localisation" aspect of SLAM, that is, pose-graph optimisation. The past, present and the future of SLAM Is also discussed (keep in mind this is an opiniated piece and just states the aspects to a typical SLAM problem)
